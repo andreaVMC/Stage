@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+
+:root{
+    --sfondo: #f5efff;
+    --active : #7371fc;
+    --non_cliccabile: #cdc1ff;
+    --cliccabile: #a594f9;
+    --text: #000;
+    --transparent-text:#7e7e7e;
+    --font: 'Roboto', sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    border: 0;
+    margin: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--sfondo);
+    font-family:var(--font);
+    color: var(--text);
+}
+
+.titolo{
+    font-size: 6vw;
+    font-weight: 900;
+    margin-top: 1%;
+    color: var(--active);
+}
+
+.signin_form{
+    border: 2px solid var(--active);
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5% 0% 0% 0%;
+    padding: 1% 0% 3% 0%;
+    border-radius: 15px;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userDataContainer{
+    /*border: 1px solid red;*/
+    padding: 5% 0% 5% 0%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.userDataContainer>p{
+    font-size: 1.2vw;
+    height: 3vh;
+    /*border: 1px solid red;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width:100%;
+}
+
+.userDataContainer>p>input{
+    width: 100%;
+    height: 80%;
+    margin-left: 4%;
+    border-color: var(--cliccabile);
+    border-radius: 5px;
+    background-color: var(--sfondo);
+    text-align: center;
+}
+
+#password{color:var(--active)}
+
+#sign_in{
+    width: fit-content;
+    height: fit-content;
+    padding: 0% 5% 0% 5%;
+    font-weight: 500;
+    background-color: var(--cliccabile);
+    border-radius: 5px;
+    border-color: transparent;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+#sign_in:active{
+    background-color: var(--active);
+}
+
+#sign_in.disabled{
+    color: var(--transparent-text);
+    background-color: var(--non_cliccabile);
+    cursor: not-allowed;
+}
+
+.loginContainer{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%; 
+}
+
+.loginContainer>button{
+    background-color: var(--cliccabile);
+    border-radius: 5px;
+    border-color: transparent;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.positiveResult{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+    width: 25%;
+    border-radius: 15px ;
+    border: 2px solid var(--active);
+    font-size: 1.2vw;
+    padding: 2% 5% 2% 5%;
+    text-align: center;
+}
+
+button{
+    width: fit-content;
+    height: fit-content;
+    font-weight: 500;
+    background-color: var(--cliccabile);
+    border-radius: 5px;
+    border-color: transparent;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    margin-top: 2%;
+}
+
+button:active{
+    background-color: var(--active);
+}
+
+.error{
+    font-size: 1vw;
+    color: red;
+}
+
+@media (max-width: 1050px){
+  .signin_form{
+    width: 60%;
+  }
+
+  .userDataContainer>p{
+    font-size: 2vw;
+  }
+
+  #sign_in{
+    margin-top: 2%;
+    height: fit-content;
+  }
+
+  button{
+    width: fit-content;
+    height: fit-content; 
+  }
+  .positiveResult>button{
+    margin-top: 10%;
+  }
+  .error{
+    font-size: 1.5vw;
+    color: red;
+  }
+
+  .correct{
+    font-size: 2.5vw;
+  }
+} 
+
+@media (max-width: 650px){
+    .userDataContainer>p{
+      font-size: 4vw;
+    }
+
+    #sign_in{
+        font-size: 3.5vw;
+    }
+
+    button{
+        font-size: 3.5vw;
+    }
+
+    .correct{
+        font-size: 3.5vw;
+    }
+
+    .error{
+        font-size: 1vw;
+        color: red;
+    }
+
+    .positiveResult>button{
+        margin-top: 25%;
+        font-size: 3vw;
+    }
+} 

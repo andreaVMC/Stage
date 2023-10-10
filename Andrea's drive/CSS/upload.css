@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrea's drive</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+        :root{
+            --primary-color: #110E35;
+            --secondary-color: #413A86;
+            --background-color: #C9C7EE;
+            --text-color: #374151;
+            --hover-color: #404E78;
+            --font: 'Roboto', sans-serif;
+        }
+
+        body{
+            border: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--background-color);
+            font-family: var(--font);
+            color: var(--text-color);
+        }
+
+        .titolo{
+            font-size: 6vw;
+            font-weight: 900;
+            margin-top: 2vh;
+            color: var(--primary-color);
+        }
+
+        .form{
+            width: 80%;
+            display: grid;
+            gap: 2%;
+            margin-top: 5vh;
+            border-radius: 5px;
+        }
+
+        .dropzone {
+            min-height: 20vh;
+            border: 2px dashed var(--secondary-color);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 4vw;
+            cursor: pointer;
+        }
+
+        .submit{
+            margin-top: 2vh;
+            padding: 1vh 5vw;
+            font-size: 2vw;
+            background-color: var(--secondary-color);
+            color: white;
+            transition-duration: 0.2s;
+            border: 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit:hover{
+            background-color: var(--hover-color);
+        }
+
+        .message{
+            font-size: 2vw;
+            margin-top: 2vh;
+        }
+
+        .success-message{
+            color: green;
+        }
+
+        .error-message{
+            color: red;
+        }
+
+        .buttons{
+            margin-top: auto;
+            margin-bottom: 2vh;
+            display: flex;
+            gap: 2%;
+        }
+
+        .button{
+            flex: 1;
+            padding: 1vh 5vw;
+            font-size: 2vw;
+            background-color: var(--secondary-color);
+            transition-duration: 0.2s;
+            border: 0;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button:hover{
+            background-color: var(--hover-color);
+        }
+
+        @media only screen and (max-width: 768px) {
+            .form {
+                width: 90%;
+            }
+
+            .titolo {
+                font-size: 10vw;
+            }
+
+            .dropzone {
+                font-size: 8vw;
+            }
+
+            .submit, .button {
+                font-size: 4vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titolo">Andrea's drive</h1>
+
+    <form class="form" method="POST" enctype="multipart/form-data">
+        <div class="dropzone" id="dropzone">
+            <span>Trascina qui i file o clicca per selezionarli</span>
+            <input type="file" name="file[]" multiple>
+        </div>
+
+        <button class="submit" type="submit">Carica file</button>
+        <div class="message">
+            <?php echo $message; ?>
+        </div>
+    </form>
+
+    <div class="buttons">
+        <a class="button" href="upload.php">Nuovo upload</a>
+        <a class="button" href="files.php">Visualizza i tuoi file</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+
+:root{
+    --sfondo: #f5efff;
+    --active : #7371fc;
+    --non_cliccabile: #cdc1ff;
+    --cliccabile: #a594f9;
+    --text: #000;
+    --transparent-text:#7e7e7e;
+    --font: 'Roboto', sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    border: 0;
+    margin: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--sfondo);
+    font-family:var(--font);
+    color: var(--text);
+}
+
+.navbar{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(6,1fr);
+    /*border: 1px solid red;*/
+    font-size: 1vw;
+    height: 6vh;
+    background-color: var(--non_cliccabile);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.navbar>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*border: 1px solid green;*/
+    width: 50%;
+    margin: 0% 25% 0% 25%;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    border-radius: 15px;
+}
+
+.navbar>div:hover{
+    box-shadow: 0px 10px 20px var(--cliccabile);
+}
+
+.ricerca{
+    width: 100%;
+    margin: 1% 0% 2% 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nome_file{
+    width:15%;
+    font-size: 1.1vw;
+    padding: 0.5% 2%;
+    border-radius: 15px;
+    border-color: transparent;
+    background-color: var(--non_cliccabile);
+    transition-duration: 0.2s;
+}
+
+.nome_file:hover{
+    width:25%;
+    border-radius: 25px;
+}
+
+
+.content{
+    /*border: 1px solid green;*/
+    width: 80%;
+    margin-top:2%;
+}
+
+table{
+    width: 100%;
+}
+
+td{
+    /*border: 1px solid blue;*/
+    width: 10%;
+    display:table-cell;
+}
+
+td>div>img{
+    width: 80%;
+    cursor: pointer;
+}
+
+.actions{
+    justify-self: flex-end;
+    width: 3%;
+    margin: auto 2% 2% auto;
+}
+
+.actions>button{
+    width: 100%;
+    border-radius: 50px;
+    padding: 20% 20% 20% 20%;
+    border-color: transparent;
+    background-color: var(--cliccabile);
+    margin-bottom: 10%;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    
+}
+
+.actions>button:active{
+    background-color: var(--active);
+}
+
+img{
+    width: 100%;
+}
+
+@media (max-width: 980px) {
+  .navbar{
+    height: 10vh;
+  }
+  .navbar>div{
+    font-size: 1.5vw;
+    width:100%;
+    margin: 0;
+  }
+
+  .nome_file{
+    font-size: 1.5vw;
+    width:30%;
+  }
+
+  .nome_file:hover{
+    width:40%;
+  }
+
+  .actions{
+    width: 5%;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar{
+    height: 10vh;
+  }
+  .navbar>div{
+    font-size: 2.7vw;
+    font-weight: 700;
+    padding: 0% 1%;
+    width:100%;
+    margin: 0;
+  }
+
+  .nome_file{
+    font-size: 3.5vw;
+    width:50%;
+    margin-top: 3%;
+  }
+
+  .nome_file:hover{
+    width:60%;
+  }
+
+  .actions{
+    width: 15%;
+  }
+}

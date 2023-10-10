@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+
+:root{
+    --sfondo: #f5efff;
+    --active : #7371fc;
+    --non_cliccabile: #cdc1ff;
+    --cliccabile: #a594f9;
+    --text: #000;
+    --transparent-text:#7e7e7e;
+    --font: 'Roboto', sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    border: 0;
+    margin: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--sfondo);
+    font-family:var(--font);
+    color: var(--text);
+}
+
+.titolo{
+    font-size: 6vw;
+    font-weight: 900;
+    margin-top: 1%;
+    color: var(--active);
+}
+
+.delete_form{
+    border: 2px solid var(--active);
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5% 0% 0% 0%;
+    padding: 1% 0% 3% 0%;
+    border-radius: 15px;
+}
+
+.delete_form>p{
+    font-size: 1.2vw;
+    height: 3vh;
+    /*border: 1px solid red;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width:80%;
+}
+
+.delete_form>p>input{
+    height: 80%;
+    margin-left: 4%;
+    border-color: var(--cliccabile);
+    border-radius: 5px;
+    background-color: var(--sfondo);
+    text-align: center;
+    width: 100%;
+}
+
+#elimina{
+    width: fit-content;
+    font-weight: 500;
+    background-color: var(--cliccabile);
+    border-radius: 5px;
+    border-color: transparent;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    padding: 1% 2%;
+}
+
+#elimina:active{
+    background-color: var(--active);
+}
+
+#elimina.disabled{
+    color: var(--transparent-text);
+    background-color: var(--non_cliccabile);
+    cursor: not-allowed;
+}
+
+.positiveResult{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    width: fit-content;
+    border-radius: 15px ;
+    border: 2px solid var(--active);
+    font-size: 1.2vw;
+    padding: 2% 5% 2% 5%;
+}
+
+button{
+    width: fit-content;
+    font-weight: 500;
+    background-color: var(--cliccabile);
+    border-radius: 5px;
+    border-color: transparent;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    margin-top: 2%;
+    padding: 0.2% 2%;
+}
+
+button:active{
+    background-color: var(--active);
+}
+
+@media (max-width: 1000px) {
+    .delete_form{
+        width: 70%;
+    }
+
+    .delete_form>p{
+        font-size: 2vw;
+    }
+    button{
+        margin-top: 10%;
+    }
+    #elimina{
+        margin-top: 5%;
+    }
+
+    .correct{
+        font-size: 2.5vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .delete_form>p{
+        font-size: 4vw;
+    }
+
+    .correct{
+        font-size: 3.5vw;
+    }
+
+    .positiveResult>button{
+        padding: 2% 3%;
+    }
+}

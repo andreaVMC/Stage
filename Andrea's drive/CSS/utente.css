@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+
+:root{
+    --sfondo: #f5efff;
+    --active : #7371fc;
+    --non_cliccabile: #cdc1ff;
+    --cliccabile: #a594f9;
+    --text: #000;
+    --transparent-text:#7e7e7e;
+    --font: 'Roboto', sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    border: 0;
+    margin: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--sfondo);
+    font-family:var(--font);
+    color: var(--text);
+}
+
+.intestazione{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user>.content{
+    width:25%;
+    font-size: 1.1vw;
+    background-color: var(--non_cliccabile);
+    padding: 3% 5% 3% 10%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.titolo{
+    font-size: 6vw;
+    font-weight: 900;
+    margin: auto;
+    color: var(--active);
+}
+
+.actions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    padding: 2% 15% 2% 2%;
+    height: 80%;
+    margin: auto 0% auto auto;
+}
+
+.actions>button{
+    margin:auto auto auto 10%;
+    padding: 5% 10%;
+    width: fit-content;
+    cursor: pointer;
+    border-radius: 5px;
+    border-color: transparent;
+    font-weight: 700;
+    background-color: var(--cliccabile);
+    transition-duration: 0.2s;
+}
+
+.actions>button:active{
+    background-color: var(--active);
+}
+
+table{
+    border: 3px solid var(--cliccabile);
+    width: 35%;
+    margin-top: 5%;
+    padding: 2% 2%;
+    border-radius: 15px;
+}
+
+td{
+    width: 50%;
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding: 2% 2%;
+}
+
+.form{
+    width: 100%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form>input{
+    font-weight: 700;
+    cursor: pointer;
+    border-color: transparent;
+    background-color: var(--cliccabile);
+    border-radius: 5px;
+    padding-bottom: 1%;
+    transition-duration: 0.2s;
+}
+
+.form>input:hover{
+    border-radius: 15px;
+    background-color: var(--active);
+}
+
+.eliminato{
+    font-size: 3vw;
+    font-weight: 700;
+    margin-top: 10%;
+    color: var(--cliccabile);
+}
+
+@media (max-width: 980px) {
+
+    .actions{
+        width: 50%;
+        padding: 2% 0% 2% 2%;
+        height: 100%;
+        margin: 0% 0% auto auto;
+    }
+
+    .titolo{
+        font-size: 8vw;
+    }
+
+    .user>.content{
+        width:60%;
+        font-size: 2.5vw;
+    }
+
+    table{
+        width: 45%;
+        margin-top: 8%;
+        padding: 2% 2%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .actions{
+        width: 80%;
+    }
+
+    .titolo{
+        font-size: 10vw;
+    }
+
+    .user>.content{
+        width:70%;
+        font-size: 3.5vw;
+    }
+
+    table{
+        width: 65%;
+        margin-top: 15%;
+        padding: 4% 4%;
+    }
+
+    .form>input{
+        margin-top: 10%;
+    }
+}
